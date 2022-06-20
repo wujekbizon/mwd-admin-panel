@@ -1,0 +1,110 @@
+@import '../../global.scss';
+
+.newProduct {
+  flex: 4;
+  background-color: $mainColor;
+  color: $textColor;
+
+  .addProductTitle {
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+  }
+
+  .addProductForm {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+
+    .addProductItem {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      margin-right: 20px;
+
+      label {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #8b949e;
+        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+
+        .uploadIcon {
+          margin-top: 10px;
+          font-size: 35px;
+          color: white;
+          cursor: pointer;
+        }
+      }
+
+      input {
+        margin-top: 10px;
+        border: none;
+        height: 25px;
+        padding: 7px;
+        background-color: $navColor;
+        border-bottom: 1px solid $logoColor;
+        border-radius: 5px;
+        font-size: 18px;
+        color: white;
+
+        &.actice,
+        &:focus {
+          outline: none;
+        }
+      }
+
+      textarea {
+        margin-top: 10px;
+        border: none;
+        height: 60px;
+        padding: 7px;
+        background-color: $navColor;
+        border-bottom: 1px solid $logoColor;
+        border-radius: 5px;
+        font-size: 18px;
+        color: white;
+
+        &.actice,
+        &:focus {
+          outline: none;
+        }
+      }
+
+      select {
+        margin-top: 10px;
+        height: 40px;
+        padding: 7px;
+        border: none;
+        background-color: $navColor;
+        font-size: 18px;
+        color: $textColor;
+        border-bottom: 1px solid $logoColor;
+        border-radius: 5px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .addProductButton {
+      width: 300px;
+      height: 40px;
+      padding: 7px 10px;
+      font-size: 20px;
+      background-color: $navColor;
+      color: $textColor;
+      border: 1px solid $sidebarColor;
+      border-radius: 5px;
+      margin-top: 53px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $sidebarColor;
+      }
+    }
+  }
+}

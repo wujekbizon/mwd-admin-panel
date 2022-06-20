@@ -1,0 +1,74 @@
+@import '../../global.scss';
+
+.button {
+  padding: 5px 7px;
+  background-color: $navColor;
+  border: 1px solid $borderColor;
+  border-radius: 5px;
+  color: $textColor;
+
+  &:hover {
+    background-color: $sidebarColor;
+  }
+}
+
+.widgetLg {
+  flex: 2;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 209, 217, 0.8);
+  box-shadow: 0px 0px 10px 1px rgba(201, 209, 217, 0.8);
+  padding: 20px;
+  margin-left: 20px;
+
+  .title {
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .widgetTable {
+    width: 100%;
+    border-spacing: 20px;
+
+    .widgetTr {
+      .widgetTh {
+        text-align: left;
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+
+        .img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 1px solid $textColor;
+          margin-right: 10px;
+        }
+      }
+
+      .date,
+      .amount {
+        font-weight: 300;
+      }
+
+      .approved {
+        background-color: green;
+
+        &:hover {
+          background-color: #238636;
+        }
+      }
+
+      .declined {
+        background-color: red;
+
+        &:hover {
+          background-color: rgb(233, 34, 34);
+        }
+      }
+    }
+  }
+}

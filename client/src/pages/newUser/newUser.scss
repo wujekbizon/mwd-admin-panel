@@ -1,0 +1,89 @@
+@import '../../global.scss';
+
+.newUser {
+  flex: 4;
+  background-color: $mainColor;
+  color: $textColor;
+
+  .newUserTitle {
+    color: white;
+    margin-left: 10px;
+  }
+
+  .newUserForm {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+
+    .newUserItem {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      margin-right: 20px;
+
+      .newUserGender {
+        display: flex;
+        align-items: center;
+
+        input {
+          margin: 10px 10px;
+        }
+      }
+
+      label {
+        margin: 10px 0px;
+        font-size: 18px;
+        color: #8b949e;
+        font-weight: 500;
+      }
+
+      input {
+        border: none;
+        height: 20px;
+        padding: 10px;
+        background-color: $navColor;
+        border-bottom: 1px solid $logoColor;
+        border-radius: 5px;
+        font-size: 18px;
+        color: white;
+
+        &.actice,
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .newUserSelect {
+        height: 40px;
+        border: none;
+        background-color: $navColor;
+        font-size: 18px;
+        color: $textColor;
+        border-bottom: 1px solid $logoColor;
+        border-radius: 5px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .newUserButton {
+      width: 300px;
+      height: 40px;
+      padding: 7px 10px;
+      font-size: 20px;
+      background-color: $navColor;
+      color: $textColor;
+      border: 1px solid $sidebarColor;
+      border-radius: 5px;
+      margin-top: 53px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $sidebarColor;
+      }
+    }
+  }
+}

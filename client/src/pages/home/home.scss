@@ -1,0 +1,13 @@
+@import '../../global.scss';
+
+.home {
+  flex: 4;
+  background-color: $mainColor;
+  color: $textColor;
+}
+
+.homeWidgets {
+  display: flex;
+  padding-top: 10px;
+  margin: 20px;
+}

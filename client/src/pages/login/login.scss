@@ -1,0 +1,46 @@
+@import '../../global.scss';
+
+.loginAdmin {
+  height: 100vh;
+  width: 100%;
+  background-color: $mainColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  input {
+    width: 20%;
+    padding: 10px;
+    background-color: $navColor;
+    border: none;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    border-bottom: 1px solid $logoColor;
+
+    &.active,
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: $sidebarColor;
+    }
+  }
+
+  button {
+    width: 15%;
+    padding: 10px;
+    background-color: $navColor;
+    border-radius: 5px;
+    border: 1px solid $sidebarColor;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $sidebarColor;
+    }
+  }
+}

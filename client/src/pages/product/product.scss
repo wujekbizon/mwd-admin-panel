@@ -1,0 +1,204 @@
+@import '../../global.scss';
+
+.product {
+  flex: 4;
+  background-color: $mainColor;
+  padding: 20px;
+
+  .chartTitle {
+    color: white;
+  }
+
+  .titleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .productTitle {
+      color: white;
+    }
+
+    .addButton {
+      width: 100px;
+      border: 1px solid $sidebarColor;
+      background-color: $navColor;
+      color: white;
+      padding: 5px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $sidebarColor;
+      }
+    }
+  }
+
+  .productTop {
+    display: flex;
+
+    .topLeft {
+      flex: 1;
+    }
+
+    .topRight {
+      flex: 1;
+      padding: 20px;
+      margin: 20px;
+      -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 209, 217, 0.8);
+      box-shadow: 0px 0px 10px 1px rgba(201, 209, 217, 0.8);
+      border-radius: 10px;
+      color: $textColor;
+
+      .productInfoTop {
+        display: flex;
+        align-items: center;
+
+        .productImg {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+
+        .productName {
+          font-weight: 500;
+          font-size: 18px;
+          margin-left: 20px;
+        }
+      }
+
+      .productInfoBottom {
+        margin-top: 20px;
+
+        .infoItem {
+          width: 150px;
+          display: flex;
+          justify-content: space-between;
+
+          .infoKey {
+            font-size: 18px;
+          }
+
+          .infoValue {
+            margin-left: 15px;
+            font-weight: 200;
+            font-style: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  .productBottom {
+    padding: 20px;
+    margin: 20px;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 209, 217, 0.8);
+    box-shadow: 0px 0px 10px 1px rgba(201, 209, 217, 0.8);
+    border-radius: 10px;
+
+    .productForm {
+      display: flex;
+      justify-content: space-between;
+
+      .formLeft {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-size: 16px;
+          margin-bottom: 10px;
+          color: $textColor;
+        }
+
+        input {
+          border: none;
+          color: white;
+          margin-bottom: 10px;
+          background-color: $navColor;
+          border-radius: 5px;
+          border-bottom: 1px solid $logoColor;
+          font-size: 15px;
+          padding: 7px;
+          width: 300px;
+
+          &.active,
+          &:focus {
+            outline: none;
+          }
+        }
+
+        textarea {
+          border: none;
+          color: white;
+          margin-bottom: 10px;
+          background-color: $navColor;
+          border-radius: 5px;
+          border-bottom: 1px solid $logoColor;
+          font-size: 15px;
+          padding: 7px;
+          height: 60px;
+          width: 300px;
+
+          &.active,
+          &:focus {
+            outline: none;
+          }
+        }
+
+        select {
+          padding: 5px;
+          border: none;
+          color: white;
+          margin-bottom: 10px;
+          background-color: $navColor;
+          border-radius: 5px;
+          border-bottom: 1px solid $logoColor;
+          font-size: 15px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .formRight {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .productUpload {
+          display: flex;
+          align-items: center;
+
+          .productUploadImg {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+          }
+
+          .productIcon {
+            color: white;
+            font-size: 24px;
+          }
+        }
+
+        .productButton {
+          padding: 7px 10px;
+          border: 1px solid $sidebarColor;
+          background-color: $navColor;
+          color: white;
+          padding: 5px;
+          font-size: 18px;
+          border-radius: 5px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $sidebarColor;
+          }
+        }
+      }
+    }
+  }
+}

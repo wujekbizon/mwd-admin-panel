@@ -1,0 +1,39 @@
+@import '../../global.scss';
+
+.productList {
+  flex: 4;
+  background-color: $mainColor;
+  color: $textColor;
+}
+
+.renderProduct {
+  display: flex;
+  align-items: center;
+
+  .productImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 25px;
+  }
+}
+
+.productListEdit {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: $navColor;
+  color: $textColor;
+  border: 1px solid $borderColor;
+  margin-right: 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $sidebarColor;
+  }
+}
+
+.productDeleteIcon {
+  cursor: pointer;
+  color: red;
+}

@@ -1,0 +1,75 @@
+@import '../../global.scss';
+
+.topbar {
+  width: 100%;
+  height: 70px;
+  background-color: $navColor;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  .topWrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    color: white;
+
+    .topLeft {
+      display: flex;
+      align-items: center;
+
+      .logoContainer {
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        border-radius: 5px;
+        padding: 5px;
+        margin-right: 15px;
+        cursor: pointer;
+
+        img {
+          height: 20px;
+        }
+      }
+
+      .textLeft {
+        font-size: 30px;
+        font-weight: 300;
+      }
+    }
+
+    .topRight {
+      display: flex;
+      align-items: center;
+
+      .topIconContainer {
+        margin-right: 15px;
+        cursor: pointer;
+        color: $textColor;
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid $textColor;
+      }
+
+      .logout {
+        padding: 5px 10px;
+        background-color: $mainColor;
+        color: $textColor;
+        border: 1px solid $sidebarColor;
+        margin-left: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $sidebarColor;
+          color: red;
+        }
+      }
+    }
+  }
+}

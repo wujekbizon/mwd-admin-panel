@@ -1,0 +1,50 @@
+@import '../../global.scss';
+
+.sidebar {
+  flex: 1;
+  height: calc(100vh - 70px);
+  position: sticky;
+  top: 70px;
+  background-color: $sidebarColor;
+
+  .menu {
+    margin-bottom: 10px;
+
+    .title {
+      font-size: 18px;
+      color: #8b949e;
+    }
+
+    .list {
+      list-style: none;
+      padding: 5px;
+
+      .item {
+        padding: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        border: 1px solid $sidebarColor;
+        color: $textColor;
+        margin: 1px 0px;
+
+        &.active,
+        &:hover {
+          background-color: $navColor;
+          border: 1px solid $borderColor;
+        }
+      }
+    }
+  }
+
+  .wrapper {
+    padding: 20px;
+    color: $textColor;
+
+    .sidebarIcon {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+  }
+}
