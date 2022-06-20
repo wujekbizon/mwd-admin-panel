@@ -21,10 +21,9 @@ const FeaturedInfo = () => {
         console.log(err);
       }
     };
-    if (income) {
-      getIncome();
-    }
-  }, [income]);
+
+    getIncome();
+  }, []);
 
   return (
     <div className="featured">
