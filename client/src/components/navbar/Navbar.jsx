@@ -8,12 +8,15 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import { Link } from 'react-router-dom';
 import { logout } from '../../redux/apiCall';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleLogout = () => {
     localStorage.clear();
     logout(dispatch);
+    navigate('/login');
   };
 
   return (

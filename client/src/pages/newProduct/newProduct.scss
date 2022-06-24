@@ -4,6 +4,9 @@
   flex: 4;
   background-color: $mainColor;
   color: $textColor;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   .addProductTitle {
     color: white;
@@ -99,12 +102,60 @@
       color: $textColor;
       border: 1px solid $sidebarColor;
       border-radius: 5px;
-      margin-top: 53px;
+      margin-top: 10px;
       cursor: pointer;
 
       &:hover {
         background-color: $sidebarColor;
       }
+    }
+  }
+
+  .infoContainer {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+
+    .colorContainer {
+      border-radius: 10px;
+      -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 209, 217, 0.8);
+      box-shadow: 0px 0px 10px 1px rgba(201, 209, 217, 0.8);
+      padding: 20px;
+      margin-top: 25px;
+
+      .colorTitle {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 20px;
+        color: white;
+      }
+
+      .colorList {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        li {
+          text-align: center;
+        }
+      }
+    }
+
+    .colorShow {
+      width: 80px;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid $borderColor;
+      color: $mainColor;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      font-size: 16px;
+      margin-bottom: 10px;
     }
   }
 }

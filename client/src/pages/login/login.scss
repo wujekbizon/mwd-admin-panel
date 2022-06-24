@@ -9,6 +9,15 @@
   align-items: center;
   justify-content: center;
 
+  .loginAdminTitle {
+    margin-bottom: 20px;
+
+    .title {
+      color: white;
+      font-weight: 300;
+    }
+  }
+
   input {
     width: 20%;
     padding: 10px;

@@ -63,6 +63,7 @@ const UserList = () => {
   return (
     <div className="userList">
       <DataGrid
+        className="dataGrid"
         rows={data}
         columns={columns}
         pageSize={10}

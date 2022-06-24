@@ -10,12 +10,17 @@ import {
 import app from '../../firebase';
 import { addProduct } from '../../redux/apiCall';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { colors, categories } from '../../dummyData';
 
 const NewProduct = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [inputs, setInputs] = useState({});
   const [file, setFile] = useState(null);
   const [cat, setCat] = useState([]);
+  const [color, setColor] = useState([]);
+  const [size, setSize] = useState([]);
 
   const handleChange = (e) => {
     setInputs((prev) => {
@@ -24,7 +29,15 @@ const NewProduct = () => {
   };
 
   const handleCat = (e) => {
-    setCat(e.target.value.split(','));
+    setCat(e.target.value.trim().split(','));
+  };
+
+  const handleColor = (e) => {
+    setColor(e.target.value.trim().split(','));
+  };
+
+  const handleSize = (e) => {
+    setSize(e.target.value.trim().split(','));
   };
 
   const handleAddProduct = (e) => {
@@ -62,9 +75,6 @@ const NewProduct = () => {
           case 'storage/canceled':
             // User canceled the upload
             break;
-
-          // ...
-
           case 'storage/unknown':
             // Unknown error occurred, inspect error.serverResponse
             break;
@@ -74,8 +84,15 @@ const NewProduct = () => {
       () => {
         // Upload completed successfully, now we can get the download URL
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          const product = { ...inputs, img: downloadURL, categories: cat };
+          const product = {
+            ...inputs,
+            img: downloadURL,
+            categories: cat,
+            color,
+            size,
+          };
           addProduct(product, dispatch);
+          navigate('/products');
         });
       }
     );
@@ -83,15 +100,15 @@ const NewProduct = () => {
 
   return (
     <div className="newProduct">
-      <h1 className="addProductTitle">New Product</h1>
       <form className="addProductForm">
+        <h1 className="addProductTitle">New Product</h1>
         <div className="addProductItem">
           <label htmlFor="name">Title</label>
           <input
             name="title"
             id="name"
             type="text"
-            placeholder="Apple Airpods"
+            placeholder="Cutting Board"
             onChange={handleChange}
           />
         </div>
@@ -120,8 +137,26 @@ const NewProduct = () => {
           <input
             id="name"
             type="text"
-            placeholder="shirts"
+            placeholder="table,art"
             onChange={handleCat}
+          />
+        </div>
+        <div className="addProductItem">
+          <label htmlFor="name">Color</label>
+          <input
+            id="name"
+            type="text"
+            placeholder="#e7cfb4,#84240c"
+            onChange={handleColor}
+          />
+        </div>
+        <div className="addProductItem">
+          <label htmlFor="name">Size</label>
+          <input
+            id="name"
+            type="text"
+            placeholder="S,M,L"
+            onChange={handleSize}
           />
         </div>
         <div className="addProductItem">
@@ -134,7 +169,6 @@ const NewProduct = () => {
 
         <div className="addProductItem">
           <label htmlFor="file">
-            Image
             <PublishOutlinedIcon className="uploadIcon" />
             Upload a photo
           </label>
@@ -149,6 +183,34 @@ const NewProduct = () => {
           Create
         </button>
       </form>
+      <div className="infoContainer">
+        <div className="colorContainer">
+          <h2 className="colorTitle">Colors</h2>
+          <ul className="colorList">
+            {colors.map((color) => (
+              <div key={color.id}>
+                <li>{color.name}</li>
+                <div
+                  className="colorShow"
+                  style={{ backgroundColor: color.color }}
+                >
+                  {color.color}
+                </div>
+              </div>
+            ))}
+          </ul>
+        </div>
+        <div className="colorContainer">
+          <h2 className="colorTitle">Categories</h2>
+          <ul className="colorList">
+            {categories.map((cat) => (
+              <div key={cat.id}>
+                <li>{cat.name}</li>
+              </div>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

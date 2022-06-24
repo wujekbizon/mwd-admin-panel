@@ -33,14 +33,21 @@ const ProductList = () => {
         );
       },
     },
-    { field: 'inStock', headerName: 'Stock', width: 200 },
+    {
+      field: 'inStock',
+      headerName: 'Stock',
+      width: 90,
+      renderCell: (params) => {
+        return <>{params.row.inStock === true ? 'Yes' : 'No'}</>;
+      },
+    },
 
     {
       field: 'price',
       headerName: 'Price',
       description: 'This column has a value getter and is not sortable.',
       sortable: false,
-      width: 200,
+      width: 90,
     },
     {
       field: 'action',
@@ -49,7 +56,7 @@ const ProductList = () => {
       renderCell: (params) => {
         return (
           <>
-            <Link to={`/product/${params.row._id}`}>
+            <Link className="link" to={`/product/${params.row._id}`}>
               <button className="productListEdit">Edit</button>
             </Link>
             <DeleteOutlineOutlinedIcon
@@ -64,19 +71,27 @@ const ProductList = () => {
 
   return (
     <div className="productList">
-      <DataGrid
-        rows={products}
-        columns={columns}
-        pageSize={10}
-        rowsPerPageOptions={[10]}
-        checkboxSelection
-        disableSelectionOnClick
-        getRowId={(row) => row._id}
-        style={{
-          color: 'white',
-          border: '1px solid #30363d',
-        }}
-      />
+      {products.length === 0 ? (
+        ''
+      ) : (
+        <div className="gridContainer">
+          <DataGrid
+            className="dataGrid"
+            rows={products}
+            columns={columns}
+            pageSize={13}
+            rowsPerPageOptions={[13]}
+            checkboxSelection
+            disableSelectionOnClick
+            getRowId={(row) => row._id}
+          />
+        </div>
+      )}
+      <div className="btnContainer">
+        <Link className="link" to="/newproduct">
+          <button className="createBtn">Create</button>
+        </Link>
+      </div>
     </div>
   );
 };

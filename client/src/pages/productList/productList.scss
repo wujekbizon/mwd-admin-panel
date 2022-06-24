@@ -3,37 +3,73 @@
 .productList {
   flex: 4;
   background-color: $mainColor;
-  color: $textColor;
-}
-
-.renderProduct {
+  padding: 30px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
 
-  .productImg {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 25px;
+  .gridContainer {
+    height: 100%;
+    .dataGrid {
+      border-radius: 10px;
+      -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 209, 217, 0.8);
+      box-shadow: 0px 0px 10px 1px rgba(201, 209, 217, 0.8);
+      color: white;
+      border: 1px solid #30363d;
+
+      svg {
+        color: $textColor;
+      }
+    }
+
+    .renderProduct {
+      display: flex;
+      align-items: center;
+
+      .productImg {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 25px;
+      }
+    }
+
+    .productListEdit {
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: $navColor;
+      color: $textColor;
+      border: 1px solid $borderColor;
+      margin-right: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $sidebarColor;
+      }
+    }
+
+    .productDeleteIcon {
+      cursor: pointer;
+      color: red !important;
+    }
   }
-}
 
-.productListEdit {
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: $navColor;
-  color: $textColor;
-  border: 1px solid $borderColor;
-  margin-right: 20px;
-  cursor: pointer;
+  .btnContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    .createBtn {
+      font-size: 16px;
+      padding: 7px 15px;
+      border-radius: 5px;
+      background-color: $navColor;
+      color: $textColor;
+      border: 1px solid $borderColor;
+      cursor: pointer;
 
-  &:hover {
-    background-color: $sidebarColor;
+      &:hover {
+        background-color: $sidebarColor;
+      }
+    }
   }
-}
-
-.productDeleteIcon {
-  cursor: pointer;
-  color: red;
 }

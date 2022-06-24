@@ -14,9 +14,8 @@ const WidgetLg = () => {
         console.log(err);
       }
     };
-    if (orders) {
-      getOrders();
-    }
+
+    getOrders();
   }, []);
 
   const Button = ({ type }) => {

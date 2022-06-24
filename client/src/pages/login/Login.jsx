@@ -1,7 +1,7 @@
+import './login.scss';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/apiCall';
-import './login.scss';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -15,6 +15,9 @@ const Login = () => {
 
   return (
     <div className="loginAdmin">
+      <div className="loginAdminTitle">
+        <h1 className="title">Administrator Login Page</h1>
+      </div>
       <input
         type="text"
         placeholder="username"
