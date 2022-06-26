@@ -8,7 +8,7 @@ const WidgetLg = () => {
   useEffect(() => {
     const getOrders = async () => {
       try {
-        const res = await userRequest.get('orders');
+        const res = await userRequest.get('/orders');
         setOrders(res.data);
       } catch (err) {
         console.log(err);

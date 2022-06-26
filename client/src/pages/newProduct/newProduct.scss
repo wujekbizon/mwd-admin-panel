@@ -108,6 +108,11 @@
       &:hover {
         background-color: $sidebarColor;
       }
+
+      &.disabled {
+        color: red;
+        cursor: not-allowed;
+      }
     }
   }
 

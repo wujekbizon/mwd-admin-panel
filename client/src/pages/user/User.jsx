@@ -1,13 +1,21 @@
 import './user.scss';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+// import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+// import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
-import LocationSearchingOutlinedIcon from '@mui/icons-material/LocationSearchingOutlined';
+// import LocationSearchingOutlinedIcon from '@mui/icons-material/LocationSearchingOutlined';
 import PublishOutlinedIcon from '@mui/icons-material/PublishOutlined';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const User = () => {
+  const location = useLocation();
+  const userId = location.pathname.split('/')[2];
+  const admin = useSelector((state) => state.user.currentUser?.isAdmin);
+  const user = useSelector((state) =>
+    state.client.users.find((user) => user._id === userId)
+  );
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -23,39 +31,30 @@ const User = () => {
       <div className="userContainer">
         <div className="show">
           <div className="showTop">
-            <img
-              className="userImg"
-              src="https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt=""
-            />
+            <img className="userImg" src={user.img} alt="" />
             <div className="topTitle">
-              <span className="name">Anna Becker</span>
-              <span className="title">Software Engineer</span>
+              <span className="name">{user.username}</span>
             </div>
           </div>
           <div className="showBottom">
             <span className="showTitle">Account Details</span>
             <div className="showInfo">
               <PermIdentityIcon className="showIcon" />
-              <span className="infoTitle">annabeck99</span>
-            </div>
-            <div className="showInfo">
-              <CalendarTodayIcon className="showIcon" />
-              <span className="infoTitle">12.03 1993</span>
+              <span className="infoTitle">{user.username}</span>
             </div>
             <span className="showTitle">Contact Details</span>
-            <div className="showInfo">
+            {/* <div className="showInfo">
               <PhoneAndroidIcon className="showIcon" />
               <span className="infoTitle">+1 123 456 67</span>
-            </div>
+            </div> */}
             <div className="showInfo">
               <MailOutlinedIcon className="showIcon" />
-              <span className="infoTitle">annabeck99@gmail.com</span>
+              <span className="infoTitle">{user.email}</span>
             </div>
-            <div className="showInfo">
+            {/* <div className="showInfo">
               <LocationSearchingOutlinedIcon className="showIcon" />
               <span className="infoTitle">Linden New Jersey | USA</span>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="update">
@@ -67,7 +66,7 @@ const User = () => {
                 <input
                   type="text"
                   id="username"
-                  placeholder="annabeck99"
+                  placeholder={user.username}
                   className="updateInput"
                 />
               </div>
@@ -76,20 +75,11 @@ const User = () => {
                 <input
                   type="text"
                   id="fullname"
-                  placeholder="Anna Becker"
+                  placeholder={user.username}
                   className="updateInput"
                 />
               </div>
-              <div className="updateItem">
-                <label htmlFor="birth">Date of Birth</label>
-                <input
-                  type="text"
-                  id="birth"
-                  placeholder="12.03 1993"
-                  className="updateInput"
-                />
-              </div>
-              <div className="updateItem">
+              {/* <div className="updateItem">
                 <label htmlFor="phone">Phone Number</label>
                 <input
                   type="text"
@@ -97,17 +87,17 @@ const User = () => {
                   placeholder="+1 123 456 67"
                   className="updateInput"
                 />
-              </div>
+              </div> */}
               <div className="updateItem">
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   id="email"
-                  placeholder="annabeck99@gmail.com"
+                  placeholder={user.email}
                   className="updateInput"
                 />
               </div>
-              <div className="updateItem">
+              {/* <div className="updateItem">
                 <label htmlFor="address">Address</label>
                 <input
                   type="text"
@@ -115,21 +105,21 @@ const User = () => {
                   placeholder="Linden New Jersey | USA"
                   className="updateInput"
                 />
-              </div>
+              </div> */}
             </div>
             <div className="updateRight">
               <div className="updateUpload">
-                <img
-                  src="https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                  alt=""
-                  className="updateImg"
-                />
+                <img src={user.img} alt="" className="updateImg" />
                 <label htmlFor="file">
                   <PublishOutlinedIcon className="uploadIcon" />
                 </label>
                 <input type="file" id="file" style={{ display: 'none' }} />
               </div>
-              <button className="updateBtn" onSubmit={handleSubmit}>
+              <button
+                disabled={!admin}
+                className={`updateBtn ${admin ? '' : 'disabled'} `}
+                onSubmit={handleSubmit}
+              >
                 Update
               </button>
             </div>

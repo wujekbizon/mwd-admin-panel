@@ -1,6 +1,9 @@
+import { useSelector } from 'react-redux';
 import './newUser.scss';
 
 const NewUser = () => {
+  const admin = useSelector((state) => state.user.currentUser?.isAdmin);
+
   return (
     <div className="newUser">
       <h1 className="newUserTitle">New User</h1>
@@ -33,11 +36,11 @@ const NewUser = () => {
           <label>Gender</label>
           <div className="newUserGender">
             <input type="radio" name="male" id="male" value="male" />
-            <label for="male">Male</label>
+            <label htmlFor="male">Male</label>
             <input type="radio" name="female" id="female" value="female" />
-            <label for="female">Female</label>
+            <label htmlFor="female">Female</label>
             <input type="radio" name="other" id="other" value="other" />
-            <label for="other">Other</label>
+            <label htmlFor="other">Other</label>
           </div>
         </div>
         <div className="newUserItem">
@@ -48,7 +51,12 @@ const NewUser = () => {
           </select>
         </div>
 
-        <button className="newUserButton">Create</button>
+        <button
+          disabled={!admin}
+          className={`newUserButton ${admin ? '' : 'disabled'}`}
+        >
+          Create
+        </button>
       </form>
     </div>
   );

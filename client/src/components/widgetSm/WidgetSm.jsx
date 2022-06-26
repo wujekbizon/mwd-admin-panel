@@ -23,28 +23,30 @@ const WidgetSm = () => {
     <div className="widgetSm">
       <h3 className="title">New Join Members</h3>
       <ul className="list">
-        {users.map((user) => (
-          <li className="listItem" key={user._id}>
-            <img
-              src={
-                user.img ||
-                'https://crowd-literature.eu/wp-content/uploads/2015/01/no-avatar.gif'
-              }
-              alt=""
-              className="img"
-            />
-            <div className="user">
-              <span className="userName">{user.username}</span>
-              <span className="userTitle">Software Engineer</span>
-            </div>
-            <Link className="link" to="/user/:userId">
-              <button className="button">
-                <VisibilityOutlinedIcon className="icon" />
-                Display
-              </button>
-            </Link>
-          </li>
-        ))}
+        {users
+          .filter((user) => user.username !== 'admin')
+          .map((user) => (
+            <li className="listItem" key={user._id}>
+              <img
+                src={
+                  user.img ||
+                  'https://crowd-literature.eu/wp-content/uploads/2015/01/no-avatar.gif'
+                }
+                alt=""
+                className="img"
+              />
+              <div className="user">
+                <span className="userName">{user.username}</span>
+                <span className="userTitle">Software Engineer</span>
+              </div>
+              <Link className="link" to={`/user/${user._id}`}>
+                <button className="button">
+                  <VisibilityOutlinedIcon className="icon" />
+                  Display
+                </button>
+              </Link>
+            </li>
+          ))}
       </ul>
     </div>
   );

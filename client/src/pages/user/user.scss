@@ -40,7 +40,7 @@
       padding: 20px;
       -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 209, 217, 0.8);
       box-shadow: 0px 0px 10px 1px rgba(201, 209, 217, 0.8);
-      border-radius: 5px;
+      border-radius: 10px;
       margin-right: 20px;
 
       .showTop {
@@ -65,6 +65,7 @@
           }
 
           .title {
+            color: $textColor;
             font-weight: 300;
           }
         }
@@ -103,7 +104,7 @@
       padding: 20px;
       -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 209, 217, 0.8);
       box-shadow: 0px 0px 10px 1px rgba(201, 209, 217, 0.8);
-      border-radius: 5px;
+      border-radius: 10px;
 
       .updateTitle {
         color: $textColor;
@@ -169,18 +170,6 @@
             }
           }
 
-          // .updateBtn {
-          //   padding: 5px;
-          //   border-radius: 5px;
-          //   background-color: green;
-          //   font-size: 18px;
-          //   color: white;
-
-          //   &:hover {
-          //     background-color: #238636;
-          //   }
-          // }
-
           .updateBtn {
             padding: 5px;
             border-radius: 5px;
@@ -191,6 +180,11 @@
 
             &:hover {
               background-color: $sidebarColor;
+            }
+
+            &.disabled {
+              color: red;
+              cursor: not-allowed;
             }
           }
         }

@@ -22,10 +22,10 @@ const Product = () => {
   const [pStats, setPStats] = useState([]);
   const [inputs, setInputs] = useState({});
   const [file, setFile] = useState(null);
-
   const product = useSelector((state) =>
     state.product.products.find((product) => product._id === productId)
   );
+  const admin = useSelector((state) => state.user.currentUser?.isAdmin);
 
   const MONTHS = useMemo(
     () => [
@@ -220,7 +220,11 @@ const Product = () => {
                 onChange={(e) => setFile(e.target.files[0])}
               />
             </div>
-            <button className="productButton" onClick={handleUpdateProduct}>
+            <button
+              disabled={!admin}
+              className={`productButton ${admin ? '' : 'disabled'}`}
+              onClick={handleUpdateProduct}
+            >
               Update
             </button>
           </div>

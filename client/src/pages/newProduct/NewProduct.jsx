@@ -9,7 +9,7 @@ import {
 } from 'firebase/storage';
 import app from '../../firebase';
 import { addProduct } from '../../redux/apiCall';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { colors, categories } from '../../dummyData';
 
@@ -21,6 +21,8 @@ const NewProduct = () => {
   const [cat, setCat] = useState([]);
   const [color, setColor] = useState([]);
   const [size, setSize] = useState([]);
+
+  const admin = useSelector((state) => state.user.currentUser?.isAdmin);
 
   const handleChange = (e) => {
     setInputs((prev) => {
@@ -179,7 +181,11 @@ const NewProduct = () => {
             onChange={(e) => setFile(e.target.files[0])}
           />
         </div>
-        <button className="addProductButton" onClick={handleAddProduct}>
+        <button
+          disabled={!admin}
+          className={`addProductButton  ${admin ? '' : 'disabled'}  `}
+          onClick={handleAddProduct}
+        >
           Create
         </button>
       </form>

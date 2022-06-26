@@ -4,6 +4,9 @@ import {
   loginStart,
   loginSuccess,
   logoutUser,
+  registerStart,
+  registerSuccess,
+  registerFailure,
 } from './userRedux';
 import {
   getProductStart,
@@ -19,6 +22,25 @@ import {
   addProductSuccess,
   addProductFailure,
 } from './productRedux';
+
+import {
+  getClientStart,
+  getClientSuccess,
+  getClientFailure,
+  addClientStart,
+  addClientSuccess,
+  addClientFailure,
+} from './clientRedux';
+
+export const registerNewUser = async (dispatch, user) => {
+  dispatch(registerStart());
+  try {
+    const response = await publicRequest.post('/auth/register', user);
+    dispatch(registerSuccess(response.data));
+  } catch (err) {
+    dispatch(registerFailure());
+  }
+};
 
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
@@ -71,5 +93,15 @@ export const addProduct = async (product, dispatch) => {
     dispatch(addProductSuccess(response.data));
   } catch (err) {
     dispatch(addProductFailure());
+  }
+};
+
+export const getClients = async (dispatch) => {
+  dispatch(getClientStart());
+  try {
+    const res = await userRequest.get('/users');
+    dispatch(getClientSuccess(res.data));
+  } catch (err) {
+    dispatch(getClientFailure());
   }
 };

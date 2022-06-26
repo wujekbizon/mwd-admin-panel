@@ -7,12 +7,15 @@ import LanguageIcon from '@mui/icons-material/Language';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import { Link } from 'react-router-dom';
 import { logout } from '../../redux/apiCall';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.currentUser);
+  const admin = useSelector((state) => state.user.currentUser?.isAdmin);
+
   const handleLogout = () => {
     localStorage.clear();
     logout(dispatch);
@@ -30,6 +33,9 @@ const Navbar = () => {
           </div>
           <span className="textLeft">ADMIN PANEL</span>
         </div>
+        {!admin && (
+          <span className="viewMode">View Mode Only For Show Purpose</span>
+        )}
         <div className="topRight">
           <div className="topIconContainer">
             <Badge
@@ -61,7 +67,14 @@ const Navbar = () => {
             <SettingsOutlinedIcon />
           </div>
 
-          <img className="topAvatar" src={avatar} alt="" />
+          <img
+            className="topAvatar"
+            src={
+              user.img ||
+              'https://crowd-literature.eu/wp-content/uploads/2015/01/no-avatar.gif'
+            }
+            alt=""
+          />
 
           <button className="logout" onClick={handleLogout}>
             Logout

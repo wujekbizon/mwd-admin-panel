@@ -9,6 +9,7 @@ import { deleteProduct, getProducts } from '../../redux/apiCall';
 const ProductList = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.product.products);
+  const admin = useSelector((state) => state.user.currentUser?.isAdmin);
 
   useEffect(() => {
     getProducts(dispatch);
@@ -59,10 +60,12 @@ const ProductList = () => {
             <Link className="link" to={`/product/${params.row._id}`}>
               <button className="productListEdit">Edit</button>
             </Link>
-            <DeleteOutlineOutlinedIcon
-              className="productDeleteIcon"
-              onClick={() => handleDelete(params.row._id)}
-            />
+            {admin && (
+              <DeleteOutlineOutlinedIcon
+                className="productDeleteIcon"
+                onClick={() => handleDelete(params.row._id)}
+              />
+            )}
           </>
         );
       },
