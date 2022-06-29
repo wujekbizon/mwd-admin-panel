@@ -24,15 +24,15 @@ const NewUser = () => {
           <label htmlFor="password">Password</label>
           <input type="password" id="password" placeholder="password" />
         </div>
-        <div className="newUserItem">
+        {/* <div className="newUserItem">
           <label htmlFor="phone">Phone</label>
           <input type="text" id="phone" placeholder="+1 234 456 67" />
-        </div>
+        </div> */}
         <div className="newUserItem">
           <label htmlFor="address">Address</label>
           <input type="text" id="address" placeholder="New Jersey , USA" />
         </div>
-        <div className="newUserItem">
+        {/* <div className="newUserItem">
           <label>Gender</label>
           <div className="newUserGender">
             <input type="radio" name="male" id="male" value="male" />
@@ -42,7 +42,7 @@ const NewUser = () => {
             <input type="radio" name="other" id="other" value="other" />
             <label htmlFor="other">Other</label>
           </div>
-        </div>
+        </div> */}
         <div className="newUserItem">
           <label htmlFor="active">Active</label>
           <select className="newUserSelect" name="active" id="active">

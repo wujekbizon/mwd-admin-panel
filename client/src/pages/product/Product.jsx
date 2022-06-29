@@ -130,7 +130,7 @@ const Product = () => {
   return (
     <div className="product">
       <div className="titleContainer">
-        <h1 className="productTitle">Product</h1>
+        <h1 className="productTitle">Add New Product</h1>
         <Link to="/newproduct">
           <button className="addButton">Create</button>
         </Link>

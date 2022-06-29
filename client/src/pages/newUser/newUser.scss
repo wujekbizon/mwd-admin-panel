@@ -4,6 +4,7 @@
   flex: 4;
   background-color: $mainColor;
   color: $textColor;
+  padding: 10px;
 
   .newUserTitle {
     color: white;
@@ -55,6 +56,7 @@
       }
 
       .newUserSelect {
+        width: 140px;
         height: 40px;
         border: none;
         background-color: $navColor;
@@ -70,7 +72,7 @@
     }
 
     .newUserButton {
-      width: 300px;
+      width: 260px;
       height: 40px;
       padding: 7px 10px;
       font-size: 20px;

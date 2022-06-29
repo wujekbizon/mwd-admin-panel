@@ -1,4 +1,5 @@
-import './App.scss';
+import './app.scss';
+import './style/light.scss';
 import Navbar from './components/navbar/Navbar';
 import Sidebar from './components/sidebar/Sidebar';
 import Home from './pages/home/Home';
@@ -12,12 +13,15 @@ import Login from './pages/login/Login';
 import { Routes, Route } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useContext } from 'react';
+import { LightModeContext } from './context/lightModeContext';
 
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
+  const { lightMode } = useContext(LightModeContext);
 
   return (
-    <div className="app">
+    <div className={lightMode ? 'app light' : 'app'}>
       {user ? <Navbar /> : ''}
       <div className="container">
         {user ? <Sidebar /> : ''}

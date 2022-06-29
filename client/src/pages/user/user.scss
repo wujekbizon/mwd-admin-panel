@@ -167,6 +167,7 @@
             .uploadIcon {
               color: white;
               cursor: pointer;
+              font-size: 26px;
             }
           }
 
@@ -177,6 +178,7 @@
             border: 1px solid $borderColor;
             font-size: 18px;
             color: $textColor;
+            cursor: pointer;
 
             &:hover {
               background-color: $sidebarColor;

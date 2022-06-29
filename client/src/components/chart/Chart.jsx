@@ -15,10 +15,10 @@ const Chart = ({ title, data, dataKey, grid }) => {
       <h3 className="chartTitle">{title}</h3>
       <ResponsiveContainer width="100%" aspect={4 / 1}>
         <LineChart data={data}>
-          <XAxis dataKey="name" stroke="#58a6ff" />
-          <Line type="monotone" dataKey={dataKey} stroke="#58a6ff" />
+          <XAxis dataKey="name" id="chartAxis" />
+          <Line type="monotone" dataKey={dataKey} className="chartLine" />
           <Tooltip />
-          {grid && <CartesianGrid stroke="#161b22" />}
+          {grid && <CartesianGrid className="chartGrid" />}
           <Legend />
         </LineChart>
       </ResponsiveContainer>

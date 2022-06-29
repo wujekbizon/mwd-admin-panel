@@ -1,26 +1,18 @@
 import './navbar.scss';
 import logo from '../../assets/logo.png';
-import avatar from '../../assets/man.png';
 import Badge from '@mui/material/Badge';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import LanguageIcon from '@mui/icons-material/Language';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import { Link } from 'react-router-dom';
-import { logout } from '../../redux/apiCall';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useContext } from 'react';
+import { LightModeContext } from '../../context/lightModeContext';
 
 const Navbar = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
   const user = useSelector((state) => state.user.currentUser);
   const admin = useSelector((state) => state.user.currentUser?.isAdmin);
-
-  const handleLogout = () => {
-    localStorage.clear();
-    logout(dispatch);
-    navigate('/login');
-  };
+  const { dispatch } = useContext(LightModeContext);
 
   return (
     <div className="topbar">
@@ -38,6 +30,10 @@ const Navbar = () => {
         )}
         <div className="topRight">
           <div className="topIconContainer">
+            <LanguageIcon />
+            English
+          </div>
+          <div className="topIconContainer">
             <Badge
               badgeContent={1}
               sx={{
@@ -51,20 +47,9 @@ const Navbar = () => {
             </Badge>
           </div>
           <div className="topIconContainer">
-            <Badge
-              badgeContent={3}
-              sx={{
-                '& .MuiBadge-badge': {
-                  color: 'white',
-                  backgroundColor: '#010409',
-                },
-              }}
-            >
-              <LanguageIcon />
-            </Badge>
-          </div>
-          <div className="topIconContainer">
-            <SettingsOutlinedIcon />
+            <DarkModeOutlinedIcon
+              onClick={() => dispatch({ type: 'TOGGLE' })}
+            />
           </div>
 
           <img
@@ -75,10 +60,6 @@ const Navbar = () => {
             }
             alt=""
           />
-
-          <button className="logout" onClick={handleLogout}>
-            Logout
-          </button>
         </div>
       </div>
     </div>

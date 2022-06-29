@@ -48,6 +48,8 @@
       align-items: center;
 
       .topIconContainer {
+        display: flex;
+        align-items: center;
         margin-right: 15px;
         cursor: pointer;
         color: $textColor;
@@ -59,21 +61,6 @@
         border-radius: 50%;
         object-fit: cover;
         border: 1px solid $textColor;
-      }
-
-      .logout {
-        padding: 5px 10px;
-        background-color: $mainColor;
-        color: $textColor;
-        border: 1px solid $sidebarColor;
-        margin-left: 20px;
-        border-radius: 5px;
-        cursor: pointer;
-
-        &:hover {
-          background-color: $sidebarColor;
-          color: red;
-        }
       }
     }
   }

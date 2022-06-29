@@ -11,7 +11,7 @@
     margin-bottom: 10px;
 
     .title {
-      font-size: 18px;
+      font-size: 14px;
       color: #8b949e;
     }
 
@@ -45,6 +45,51 @@
     .sidebarIcon {
       font-size: 20px;
       margin-right: 10px;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border: 1px solid $borderColor;
+
+    .bottomTitle {
+      margin: 0px 10px;
+      color: $textColor;
+    }
+
+    .colorOption {
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+      border: 1px solid $navColor;
+      cursor: pointer;
+      margin: 5px;
+
+      &:nth-child(2) {
+        background-color: white;
+      }
+      &:nth-child(3) {
+        background-color: $mainColor;
+      }
+    }
+
+    .logout {
+      display: flex;
+      align-items: center;
+      color: $textColor;
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+      }
+
+      .sidebarIcon {
+        margin-left: 50px;
+        margin-right: 10px;
+        color: white;
+      }
     }
   }
 }

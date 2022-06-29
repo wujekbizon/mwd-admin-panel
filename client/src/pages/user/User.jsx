@@ -23,7 +23,7 @@ const User = () => {
   return (
     <div className="user">
       <div className="titleContainer">
-        <h1 className="title">Edit User</h1>
+        <h1 className="title">Add New User</h1>
         <Link to="/newUser">
           <button className="addButton">Create</button>
         </Link>

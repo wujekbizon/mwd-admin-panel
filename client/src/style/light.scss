@@ -1,0 +1,495 @@
+@import '../global.scss';
+
+.app.light {
+  .topbar {
+    background-color: $lightNav;
+
+    .topLeft {
+      color: $lightMain;
+
+      .logoContainer {
+        border-color: $lightMain;
+      }
+    }
+
+    .topRight {
+      .topIconContainer {
+        color: $lightMain;
+      }
+
+      .topAvatar {
+        border-color: $lightMain;
+      }
+    }
+  }
+
+  .sidebar {
+    background-color: $lightSidebar;
+    border-right: 1px solid $lightMain;
+
+    .title {
+      color: #2f3542;
+    }
+
+    .list {
+      .item {
+        color: $lightMain;
+        border-color: transparent;
+
+        &.active,
+        &:hover {
+          background-color: $lightNav;
+          color: white;
+        }
+      }
+
+      .sidebarIcon {
+        color: #e67e22;
+      }
+    }
+
+    .bottom {
+      border-color: transparent;
+
+      .bottomTitle {
+        color: $lightMain;
+      }
+
+      .logout {
+        color: $lightMain;
+
+        &:hover {
+          color: black;
+        }
+
+        .sidebarIcon {
+          color: #e67e22;
+        }
+      }
+    }
+  }
+
+  .home {
+    background-color: white;
+    color: $lightMain;
+
+    .featuredItem {
+      -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+      box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+    }
+
+    .chart {
+      -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+      box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+
+      .chartGrid {
+        stroke: #d7e0e7;
+      }
+    }
+  }
+
+  .widgetSm {
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+    box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+
+    .title {
+      color: $lightMain;
+    }
+
+    .list {
+      .listItem {
+        .img {
+          border: 1px solid $lightMain;
+        }
+
+        .user {
+          background-color: white;
+        }
+
+        .button {
+          background-color: $lightSidebar;
+          color: #21262d;
+
+          .icon {
+            color: #e67e22;
+          }
+        }
+      }
+    }
+  }
+
+  .widgetLg {
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+    box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+
+    .title {
+      color: $lightMain;
+    }
+
+    .widgetTr {
+      .user {
+        background-color: white;
+      }
+    }
+  }
+
+  .productList {
+    background-color: white;
+
+    .gridContainer {
+      .dataGrid {
+        background-color: white;
+        color: $lightMain;
+
+        svg {
+          color: $lightMain;
+        }
+      }
+
+      .productImg {
+        border: 1px solid $lightNav;
+      }
+
+      .productListEdit {
+        background-color: $lightSidebar;
+        color: #21262d;
+      }
+
+      .productDeleteIcon {
+        color: rgb(250, 68, 68) !important;
+      }
+    }
+
+    .createBtn {
+      background-color: $lightSidebar;
+      color: #21262d;
+
+      &:hover {
+        background-color: $lightNav;
+      }
+    }
+  }
+
+  .newProduct {
+    background-color: white;
+    color: $lightMain;
+
+    .addProductTitle {
+      color: $lightMain;
+    }
+
+    .addProductForm {
+      label {
+        color: #2f3542;
+
+        .uploadIcon {
+          color: #e67e22;
+        }
+      }
+
+      input {
+        background-color: $lightSidebar;
+        border: 1px solid $lightMain;
+        color: $lightMain;
+      }
+
+      textarea {
+        background-color: $lightSidebar;
+        border: 1px solid $lightMain;
+        color: $lightMain;
+      }
+
+      select {
+        background-color: $lightSidebar;
+        border: 1px solid $lightMain;
+        color: $lightMain;
+      }
+
+      .addProductButton {
+        background-color: $lightSidebar;
+        color: #21262d;
+
+        &:hover {
+          background-color: $lightNav;
+        }
+      }
+    }
+
+    .infoContainer {
+      .colorContainer {
+        -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+        box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+
+        .colorTitle {
+          color: $lightMain;
+        }
+      }
+    }
+  }
+
+  .product {
+    background-color: white;
+    color: $lightMain;
+
+    .chartTitle {
+      color: $lightMain;
+    }
+
+    .titleContainer {
+      .productTitle {
+        color: $lightMain;
+      }
+
+      .addButton {
+        background-color: $lightSidebar;
+        color: #21262d;
+
+        &:hover {
+          background-color: $lightNav;
+        }
+      }
+    }
+
+    .productTop {
+      .topRight {
+        -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+        box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+        color: $lightMain;
+
+        .productImg {
+          border: 1px solid $lightNav;
+        }
+      }
+    }
+
+    .productBottom {
+      -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+      box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+
+      .formLeft {
+        label {
+          color: $lightMain;
+        }
+
+        input {
+          background-color: $lightSidebar;
+          border: 1px solid $lightMain;
+          color: $lightMain;
+        }
+
+        textarea {
+          background-color: $lightSidebar;
+          border: 1px solid $lightMain;
+          color: $lightMain;
+        }
+
+        select {
+          background-color: $lightSidebar;
+          border: 1px solid $lightMain;
+          color: $lightMain;
+        }
+      }
+
+      .formRight {
+        .productUpload {
+          .productUploadImg {
+            border: 1px solid $lightNav;
+          }
+
+          .productIcon {
+            color: #e67e22;
+          }
+        }
+
+        .productButton {
+          background-color: $lightSidebar;
+          color: #21262d;
+
+          &:hover {
+            background-color: $lightNav;
+          }
+        }
+      }
+    }
+  }
+
+  .userList {
+    background-color: white;
+
+    .dataGrid {
+      background-color: white;
+      color: $lightMain;
+
+      svg {
+        color: $lightMain;
+      }
+    }
+
+    .renderUser {
+      img {
+        border: 1px solid $lightNav;
+      }
+    }
+
+    .userListEdit {
+      background-color: $lightSidebar;
+      color: #21262d;
+    }
+
+    .userDeleteIcon {
+      color: rgb(250, 68, 68) !important;
+    }
+  }
+
+  .user {
+    background-color: white;
+
+    .title {
+      color: $lightMain;
+    }
+
+    .addButton {
+      background-color: $lightSidebar;
+      color: #21262d;
+
+      &:hover {
+        background-color: $lightNav;
+      }
+    }
+
+    .userContainer {
+      .show {
+        -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+        box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+
+        .userImg {
+          border: 1px solid $lightNav;
+        }
+
+        .topTitle {
+          .name {
+            color: $lightMain;
+          }
+        }
+
+        .showBottom {
+          .showInfo {
+            .showIcon {
+              color: #e67e22;
+            }
+
+            .infoTitle {
+              color: $lightMain;
+            }
+          }
+        }
+      }
+
+      .update {
+        -webkit-box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+        box-shadow: 0px 0px 10px 1px rgba(201, 201, 201, 0.47);
+
+        .updateTitle {
+          color: $lightMain;
+        }
+
+        .updateForm {
+          .updateLeft {
+            .updateItem {
+              input {
+                background-color: $lightSidebar;
+                border: 1px solid $lightMain;
+                color: $lightMain;
+              }
+            }
+          }
+
+          .updateRight {
+            .updateUpload {
+              .updateImg {
+                border: 1px solid $lightNav;
+              }
+
+              .uploadIcon {
+                color: #e67e22;
+              }
+            }
+
+            .updateBtn {
+              background-color: $lightSidebar;
+              color: #21262d;
+
+              &:hover {
+                background-color: $lightNav;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .newUser {
+    background-color: white;
+
+    .newUserTitle {
+      color: $lightMain;
+    }
+
+    .newUserForm {
+      .newUserItem {
+        input {
+          background-color: $lightSidebar;
+          border: 1px solid $lightMain;
+          color: $lightMain;
+        }
+
+        .newUserSelect {
+          background-color: $lightSidebar;
+          border: 1px solid $lightMain;
+          color: $lightMain;
+        }
+      }
+
+      .newUserButton {
+        background-color: $lightSidebar;
+        color: #21262d;
+
+        &:hover {
+          background-color: $lightNav;
+        }
+      }
+    }
+  }
+
+  .logoutModal {
+    .modal {
+      background-color: $lightNav;
+
+      .title {
+        color: $lightMain;
+      }
+
+      .buttonContainer {
+        .buttonConfirm {
+          background-color: $lightSidebar;
+          color: #21262d;
+
+          &:hover {
+            color: red;
+            background-color: $lightNav;
+          }
+        }
+        .buttonCancel {
+          background-color: $lightSidebar;
+          color: #21262d;
+
+          &:hover {
+            color: green;
+            background-color: $lightNav;
+          }
+        }
+      }
+    }
+  }
+}
