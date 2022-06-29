@@ -1,5 +1,5 @@
-import './app.scss';
 import './style/light.scss';
+import './app.scss';
 import Navbar from './components/navbar/Navbar';
 import Sidebar from './components/sidebar/Sidebar';
 import Home from './pages/home/Home';
